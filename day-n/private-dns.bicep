@@ -22,6 +22,9 @@ resource vnLink 'Microsoft.Network/privateDnsZones/virtualNetworkLinks@2020-06-0
       id: vnId
     }
   }
+  dependsOn: [
+    privateDns
+  ]
 }
 
 
