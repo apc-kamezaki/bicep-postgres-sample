@@ -7,6 +7,8 @@ param location string = resourceGroup().location
 param subnetId string
 @description('connection target array of { serviceId: strng, groupIds: array of string }')
 param linkServiceConnections array
+@description('Tag information')
+param tags object = {}
 
 resource endpoint 'Microsoft.Network/privateEndpoints@2020-08-01' = {
   name: name
@@ -23,4 +25,5 @@ resource endpoint 'Microsoft.Network/privateEndpoints@2020-08-01' = {
       }
     }]
   }
+  tags: tags
 }

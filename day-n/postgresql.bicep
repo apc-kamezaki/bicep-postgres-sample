@@ -21,6 +21,8 @@ param skuTier string = 'Basic'
 param skuFamily string = 'Gen5'
 @description('The scale up/out capacity')
 param skuCapacity int = skuTier == 'Basic' ? 2 : 4
+@description('Tag information')
+param tags object = {}
 
 var skuNamePrefix = skuTier == 'GeneralPurpose' ? 'GP' : (skuTier == 'Basic' ? 'B' : 'OM')
 var skuName = '${skuNamePrefix}_${skuFamily}_${skuCapacity}'
@@ -40,6 +42,7 @@ resource pgsql 'Microsoft.DBForPostgreSQL/servers@2017-12-01' = {
     administratorLogin: adminUser
     administratorLoginPassword: adminPassword
   }
+  tags: tags
 }
 
 output id string = pgsql.id

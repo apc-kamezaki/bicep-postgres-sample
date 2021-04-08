@@ -7,6 +7,8 @@ param location string = 'global'
 param vnId string
 @description('enable auto registration for private dns')
 param autoRegistration bool = false
+@description('Tag information')
+param tags object = {}
 
 resource privateDns 'Microsoft.Network/privateDnsZones@2020-06-01' = {
   name: name
@@ -25,6 +27,7 @@ resource vnLink 'Microsoft.Network/privateDnsZones/virtualNetworkLinks@2020-06-0
   dependsOn: [
     privateDns
   ]
+  tags: tags
 }
 
 
