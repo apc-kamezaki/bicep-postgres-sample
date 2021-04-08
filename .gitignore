@@ -1,6 +1,8 @@
 # local environments
 .envrc
 
+*.json
+
 # HELP document for local
 HELP.md
 
