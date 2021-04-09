@@ -70,5 +70,6 @@ module dnsGroup 'private-zone-groups.bicep' = {
   }
   dependsOn: [
     pgsql
+    endpoint
   ]
 }
