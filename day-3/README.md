@@ -1,4 +1,4 @@
-# Day 3
+# Day 3 & Day 4
 
 deploy.bicepから以下のリソースを追加。  
 個々のリソースはBicepモジュールで定義。
